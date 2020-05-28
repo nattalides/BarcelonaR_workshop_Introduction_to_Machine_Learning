@@ -1,11 +1,11 @@
-df <- winequality_red
+#df <- winequality_red
 
-saveRDS(df, "data/data.rds")
+#saveRDS(df, "data/data.rds")
 
 library(dplyr)
 library(magrittr)
 library(corrplot)
-library(strignr)
+library(stringr)
 library(rsample)
 
 # Example 1
