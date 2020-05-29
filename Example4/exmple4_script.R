@@ -1,19 +1,19 @@
-# Example 4
-
 lm_pred <- test_data %>% 
-  bind_cols(predict(object = lm_fit, new_data = test_data)) %>% 
-  rename(pred = .pred)
+  bind_cols(predict(object = lm_fit, new_data = test_data))
 
 View(lm_pred)
 
 lm_pred <- test_data %>% 
-  bind_cols(predict(object = lm_fit, new_data = test_data)) %>% 
-  rename(pred = .pred) %>% 
+  bind_cols(predict(object = lm_fit, new_data = test_data))
   mutate(pred = round(pred, 0))
 
 lm_mse <- lm_pred %>% 
   summarise(type = "lm",
             MSE = round(mean((pred - quality)^2), 4))
+
+View(lm_mse)
+
+# Example 4
 
 # 1 a) MSE for: Decision Tree
 
@@ -38,7 +38,7 @@ rf_mse <- rf_pred %>%
             MSE = round(mean((pred - quality)^2), 4))
 
 
-# 1 c) MSE for: Xgboost
+# 1 c) MSE for: xgboost
 
 xgboost_pred <- test_data %>% 
   bind_cols(predict(object = xgboost_fit, new_data = test_data)) %>% 
@@ -54,3 +54,5 @@ xgboost_mse <- xgboost_pred %>%
 res <- bind_rows(lm_mse, dt_mse, rf_mse, xgboost_mse)
 
 View(res)
+
+View(rf_pred)

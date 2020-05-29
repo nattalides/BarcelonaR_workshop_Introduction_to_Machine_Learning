@@ -1,9 +1,5 @@
 # Example 2
 
-View(train_data)
-
-?formula
-
 # For the below tasks, please store each formula in a different R object.
 
 # 1. Using the data define: 
@@ -16,9 +12,9 @@ View(train_data)
 # 2. Design a simple formula to predict the target variable.
 
 # Formula that uses all available features
-fmla1 <- as.formula(quality ~ fixed_acidity + volatile_acidity + citric_acid + 
-                      residual_sugar + chlorides + free_sulfur_dioxide + 
-                      total_sulfur_dioxide + density + pH + sulphates + alcohol)
+fmla1 <- formula(quality ~ fixed_acidity + volatile_acidity + citric_acid + 
+                   residual_sugar + chlorides + free_sulfur_dioxide + 
+                   total_sulfur_dioxide + density + pH + sulphates + alcohol)
 
 # 3. Get creative and engineer some features to design other formulas!
 
