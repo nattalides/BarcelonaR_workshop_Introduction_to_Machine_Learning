@@ -4,31 +4,30 @@ View(train_data)
 
 ?formula
 
-# For the below, please store each formula in different R objects.
+# For the below tasks, please store each formula in a different R object.
 
-# 1.	Using the data define: 
+# 1. Using the data define: 
 # a) The target variable (is it numeric or a class?)
 # b) The features of the model
 
-# quality is the Target variable
-# Any of the other variables can be model features (1, 2, 3 or all of them)
+# a) "quality" is the target variable and it is numeric
+# b) one or more of the other variables can be model a feature (these are also numeric)
 
-# 2.Design a simple formula to predict the target variable.
+# 2. Design a simple formula to predict the target variable.
 
-# Using all available features
-fmla1 <- as.formula(quality ~ fixed_acidity + volatile_acidity + citric_acid + residual_sugar +
-                   chlorides + free_sulfur_dioxide + total_sulfur_dioxide + density + pH + 
-                   sulphates + alcohol)
+# Formula that uses all available features
+fmla1 <- as.formula(quality ~ fixed_acidity + volatile_acidity + citric_acid + 
+                      residual_sugar + chlorides + free_sulfur_dioxide + 
+                      total_sulfur_dioxide + density + pH + sulphates + alcohol)
 
-# 3. Get creative and engineer some simple features to design other formulas.
+# 3. Get creative and engineer some features to design other formulas!
 
-# Remove some correlated features
+# Remove some of the correlated features
 fmla2 <- formula(quality ~ fixed_acidity + volatile_acidity + residual_sugar +
                    chlorides + free_sulfur_dioxide + pH + sulphates + alcohol)
 
-# Engineer some features
+# Engineer some new features
 fmla3 <- formula(quality ~ volatile_acidity + alcohol + 
                    volatile_acidity^2 + alcohol^2)
 
 fmla4 <- formula(quality ~ log(volatile_acidity) + log(alcohol))
-
