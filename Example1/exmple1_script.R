@@ -12,11 +12,12 @@ View(df)
 # 1. A summary of the data frame
 df %>% summary
 
-# 2. A correlation plot of the data
+# 2. A correlation matrix of the data
 df %>% cor()
 
 # 3. Fix column names
-colnames(df) <- df %>% colnames() %>% str_replace_all(" ","_")
+colnames(df) <- df %>% 
+  colnames() %>% str_replace_all(pattern = " ", replacement = "_")
 
 # 4. Remove any missing values
 df <- df %>% na.omit()
@@ -35,6 +36,7 @@ df %>% cor() %>%
 
 set.seed(12345) # Fix randomisation by setting the seed (reproducibility)
 
+# All functions below come from the {rsample} package
 data_split <- initial_split(df, prop = 0.8) # Use 80% of the data for training
 
 train_data <- training(data_split)

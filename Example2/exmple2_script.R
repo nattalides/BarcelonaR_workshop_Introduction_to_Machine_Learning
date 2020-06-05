@@ -23,7 +23,4 @@ fmla2 <- formula(quality ~ fixed_acidity + volatile_acidity + residual_sugar +
                    chlorides + free_sulfur_dioxide + pH + sulphates + alcohol)
 
 # Engineer some new features
-fmla3 <- formula(quality ~ volatile_acidity + alcohol + 
-                   volatile_acidity^2 + alcohol^2)
-
-fmla4 <- formula(quality ~ log(volatile_acidity) + log(alcohol))
+fmla3 <- formula(quality ~ log(volatile_acidity) + log(alcohol))

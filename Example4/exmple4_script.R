@@ -1,11 +1,13 @@
+# Predict and evaluate a model fit
+
 lm_pred <- test_data %>% 
   bind_cols(predict(object = lm_fit, new_data = test_data))
 
 View(lm_pred)
 
 lm_pred <- test_data %>% 
-  bind_cols(predict(object = lm_fit, new_data = test_data))
-  mutate(pred = round(pred, 0))
+  bind_cols(predict(object = lm_fit, new_data = test_data)) %>% 
+  mutate(pred = round(.pred, 0))
 
 lm_mse <- lm_pred %>% 
   summarise(type = "lm",
@@ -36,7 +38,6 @@ rf_pred <- test_data %>%
 rf_mse <- rf_pred %>% 
   summarise(type = "rf",
             MSE = round(mean((pred - quality)^2), 4))
-
 
 # 1 c) MSE for: xgboost
 
