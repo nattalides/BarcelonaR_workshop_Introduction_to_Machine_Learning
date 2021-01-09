@@ -1,9 +1,9 @@
 # Fit a linear regression model to the data
 
 lm_fit <- # Create the object that will store the model fit
-  linear_reg() %>% # Model specification
-  set_mode("regression") %>% # Specify that this is a regression problem
-  set_engine("lm") %>% # Specify which package to use to train the model
+  linear_reg() %>% # Model type: Linear Regression
+  set_mode("regression") %>% # Model mode: regression
+  set_engine("lm") %>% # Computational engine: lm
   fit(fmla1, data = train_data) # Supply formula & train data and fit model
 
 print(lm_fit$fit)
