@@ -20,7 +20,7 @@ colnames(df) <- df %>%
   colnames() %>% str_replace_all(pattern = " ", replacement = "_")
 
 # 4. Remove any missing values
-df <- df %>% na.omit()
+df <- df %>% drop_na()
 
 df %>% summary()
 
