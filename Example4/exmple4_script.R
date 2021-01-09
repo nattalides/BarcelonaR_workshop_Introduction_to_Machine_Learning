@@ -15,6 +15,8 @@ lm_mse <- lm_pred %>%
 
 View(lm_mse)
 
+metrics(lm_pred, truth = quality, estimate = pred)
+
 # Example 4
 
 # 1 a) MSE for: Decision Tree
