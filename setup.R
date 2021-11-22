@@ -7,7 +7,7 @@ library(randomForest)
 library(xgboost)
 
 #Optional
-install.packages(c("corrplot", "visNetwork", "visNetwork"))
+install.packages(c("corrplot", "visNetwork", "sparkline"))
 library(corrplot)
 library(visNetwork)
 library(sparkline)
