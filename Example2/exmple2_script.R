@@ -7,7 +7,7 @@
 # b) The features of the model
 
 # a) "quality" is the target variable and it is numeric (can also be thought of as a class!)
-# b) one or more of the other variables can be model a feature (these are also numeric)
+# b) one or more of the other variables can be model a feature (these are numeric)
 
 # 2. Design a simple formula to predict the target variable.
 
